@@ -16,7 +16,7 @@ describe('engineer specific functions',()=>{
 
     it('will return correct role when getRole function is called', ()=>{
         const roleTest = "Engineer"
-        const employeeObject = new Employee("Diego",1,"medeldiego47@gmail.com")
+        const employeeObject = new Engineer("Diego",1,"medeldiego47@gmail.com","medeldiego47")
         expect(employeeObject.getRole()).toBe(roleTest);
     })
 
