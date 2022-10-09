@@ -1,4 +1,4 @@
-const Manager = require('../lib/Manager');
+const {Manager, mangerQs} = require('../lib/Manager');
 
 describe('manager specific functions',()=>{
     

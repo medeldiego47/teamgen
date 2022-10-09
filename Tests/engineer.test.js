@@ -1,4 +1,4 @@
-const Engineer = require('../lib/engineer');
+const {Engineer, engineerQs} = require('../lib/engineer');
 
 describe('engineer specific functions',()=>{
     

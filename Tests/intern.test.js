@@ -1,4 +1,4 @@
-const Intern = require('../lib/intern');
+const {Intern, internQs} = require('../lib/intern');
 
 describe('intern specific functions',()=>{
     
