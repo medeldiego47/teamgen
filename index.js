@@ -5,16 +5,17 @@ const template = require('./src/pagetemplate')
 const {Manager, managerQs} = require('./lib/Manager')
 const {Engineer, engineerQs} = require('./lib/engineer')
 const {Intern, internQs} = require('./lib/intern')
-
+//empty array for staff
 const staff =[];
-
+//write file function to create the actual page
 const writeFile = (content) => {
     fs.writeFile('./dist/index.html',content,(err)=>{
         (err)?console.log(err):console.log('Staff list has been created.')
     })
 }
+//initial function to get things started
 const init = () => {firstPrompt()}
-
+//first prompt that asks what type of employee you would like to add or if you are finished
 const firstPrompt = () =>{
     inquirer.prompt([{
         type:'list',
@@ -27,7 +28,7 @@ const firstPrompt = () =>{
             {name: 'done', value: 'done'}
         ]
     }
-    
+    //shoots off proper function based on the value returned from the question
 ]).then( (data) =>{
     if (data.Type === "addManager"){
         managerInquirer()
@@ -36,6 +37,7 @@ const firstPrompt = () =>{
     } else if (data.Type === "addIntern"){
         internInquirer()
     }else {
+        //if your done it will shoot off the template generator and create the new html file
         console.log("im hitting the done criteria")
        const html =template.generateHTML(staff)
 
@@ -45,7 +47,7 @@ const firstPrompt = () =>{
 
 })
 }
-
+//call inquirer prompts for respective roles
 const managerInquirer = ()=> {
     inquirer.prompt(managerQs)
     .then((data)=>{
@@ -70,5 +72,5 @@ const internInquirer = ()=> {
         return firstPrompt()
     })
 }
-
+//start the code
 init()

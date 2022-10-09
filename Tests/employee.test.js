@@ -1,5 +1,5 @@
 const Employee = require('../lib/employee')
-
+//test base functions of object
 describe('employee creation',()=>{
     it("should create a new object of the employee constructor when called with the new keyword",()=>{
     const employeeObject= new Employee();
@@ -24,7 +24,7 @@ describe('employee creation',()=>{
         expect(employeeObject.email).toBe(email);
     })
 })
-
+//test functions to ensure functionality
 describe('employee functions', ()=>{
     it('will get inputed name when getName function is called', ()=>{
         const nameTest = "Diego"

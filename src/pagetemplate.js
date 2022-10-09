@@ -1,5 +1,5 @@
 
-
+//html markup for manager
 const manager = manager => {
     return `<div class="card employee-card">
     <div class="card-header bg-primary text-white">
@@ -16,6 +16,7 @@ const manager = manager => {
 </div>`
 
 };
+//html markup for engineer
 const engineer = engineer =>{
     return `<div class="card employee-card">
     <div class="card-header bg-primary text-white">
@@ -31,6 +32,7 @@ const engineer = engineer =>{
     </div>
 </div>`
 }
+//html markup for intern
 const intern = intern => {
     return `<div class="card employee-card">
     <div class="card-header bg-primary text-white">
@@ -47,6 +49,7 @@ const intern = intern => {
 </div>`
 ;
 }
+//function to take in roles and call appropriate function to generate cards that will go into html
 generateHTML = (data) => {
 
     // array for cards 
@@ -83,12 +86,12 @@ generateHTML = (data) => {
     // joining strings 
     const staffDiv = pageArray.join('')
 
-    // return to generated page
+   //generate page 
     const generateTeam = template(staffDiv); 
     return generateTeam;
 
 }
-
+//html markup that takes in staffDiv to create the final page
 const template = (data) => {
     return `<!DOCTYPE html>
     <html lang="en">
