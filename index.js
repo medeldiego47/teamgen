@@ -6,7 +6,7 @@ const {Manager, managerQs} = require('./lib/Manager')
 const {Engineer, engineerQs} = require('./lib/engineer')
 const {Intern, internQs} = require('./lib/intern')
 
-const staff =[]
+const staff =[];
 
 const writeFile = (content) => {
     fs.writeFile('./dist/index.html',content,(err)=>{
@@ -24,7 +24,7 @@ const firstPrompt = () =>{
             {name: 'Manager', value:"addManager"},
             {name: 'Engineer', value:"addEngineer"},
             {name: 'Intern', value:"addIntern"},
-            {name: 'finished', value: 'finished'}
+            {name: 'done', value: 'done'}
         ]
     }
     
@@ -35,12 +35,16 @@ const firstPrompt = () =>{
         engineerInquirer()
     } else if (data.Type === "addIntern"){
         internInquirer()
-    }else if (data.type === "finished"){
-        let markup = template(staff);
-        writeFile(markup);
+    }else {
+        console.log("im hitting the done criteria")
+       const html =template.generateHTML(staff)
+
+        writeFile(html)
+       
     }
 
-})}
+})
+}
 
 const managerInquirer = ()=> {
     inquirer.prompt(managerQs)
