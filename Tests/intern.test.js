@@ -1,16 +1,16 @@
-const Intern = require('../lib/intern')
+const Intern = require('../lib/intern');
 
 describe('intern specific functions',()=>{
     
     it('expect school to be equal to inputed school',()=>{
         const schoolTest ='UT Austin';
-        const employeeObject = new Intern =('Diego',1,'medeldiego47@yahoo.com',schoolTest);
+        const employeeObject = new Intern('Diego',1,'medeldiego47@yahoo.com',schoolTest);
         expect(employeeObject.school).toBe(schoolTest)
     })
 
     it('expect school function to pull inputed school',()=>{
         const schoolTest ='UT Austin';
-        const employeeObject = new Intern =('Diego',1,'medeldiego47@yahoo.com',schoolTest);
+        const employeeObject = new Intern('Diego',1,'medeldiego47@yahoo.com',schoolTest);
         expect(employeeObject.getSchool()).toBe(schoolTest)
     })
 

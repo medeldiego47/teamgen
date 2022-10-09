@@ -3,7 +3,7 @@ const Employee = require('../lib/employee')
 describe('employee creation',()=>{
     it("should create a new object of the employee constructor when called with the new keyword",()=>{
     const employeeObject= new Employee();
-    expect(typeof(employeeObject)).tobe("object")
+    expect(typeof(employeeObject)).toBe("object")
     });
 
     it("should set name property to name entered",()=>{

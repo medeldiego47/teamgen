@@ -1,10 +1,10 @@
-const Manager = require('../lib/manager')
+const Manager = require('../lib/Manager');
 
 describe('manager specific functions',()=>{
     
     it('expect office number to be equal to inputed office number',()=>{
         const officeNumberTest =123;
-        const employeeObject = new Manager =('Diego',1,'medeldiego47@yahoo.com',officeNumberTest);
+        const employeeObject = new Manager('Diego',1,'medeldiego47@yahoo.com',officeNumberTest);
         expect(employeeObject.officeNumber).toBe(officeNumberTest)
     })
 
